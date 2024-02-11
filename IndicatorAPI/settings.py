@@ -47,6 +47,10 @@ INSTALLED_APPS = [
     'post_office',
     'corsheaders',
     'django_filters',
+    'adminsortable2',
+    'adminsortable',
+    'users_app',
+    'projects_app',
 ]
 
 MIDDLEWARE = [
@@ -172,6 +176,9 @@ CORS_ALLOW_METHODS = [
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+
+# User
+AUTH_USER_MODEL = 'users_app.User'
 
 # Email
 EMAIL_BACKEND = os.environ.get("EMAIL_BACKEND")

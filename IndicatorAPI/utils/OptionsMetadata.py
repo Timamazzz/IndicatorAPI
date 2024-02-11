@@ -3,7 +3,7 @@ from collections import OrderedDict
 from django.utils.encoding import force_str
 from rest_framework import serializers
 from rest_framework.utils.field_mapping import ClassLookupDict
-from JobHub.utils.fields import PhoneField, PasswordField
+from IndicatorAPI.utils.fields import PhoneField, PasswordField
 
 
 class OptionsMetadata(SimpleMetadata):
