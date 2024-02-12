@@ -14,7 +14,7 @@ class GalleryImagesSerializer(WritableNestedModelSerializer):
 
     class Meta:
         model = GalleryImage
-        fields = '__all__'
+        fields = ('file', 'order')
 
 
 class GallerySerializer(WritableNestedModelSerializer):
@@ -30,4 +30,4 @@ class ContentForProjectSerializer(WritableNestedModelSerializer):
 
     class Meta:
         model = Content
-        fields = '__all__'
+        exclude = ('project', )
