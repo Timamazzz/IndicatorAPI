@@ -21,7 +21,7 @@ class ProjectViewSet(ModelViewSet):
         'discuss': ProjectDiscussFormSerializer,
     }
 
-    @action(detail=True, methods=['post'])
+    @action(detail=False, methods=['post'])
     def discuss(self, request):
         serializer = ProjectDiscussFormSerializer(data=request.data)
         if serializer.is_valid():
