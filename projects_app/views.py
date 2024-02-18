@@ -1,9 +1,11 @@
-from rest_framework import permissions, status
-from rest_framework.decorators import action
+from rest_framework import status
+from rest_framework.permissions import AllowAny, IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from IndicatorAPI import settings
 from IndicatorAPI.utils.ModelViewSet import ModelViewSet
+from IndicatorAPI.utils.OptionsMetadata import OptionsMetadata
 from projects_app.models import Project
 from projects_app.serializers.project_serializers import ProjectSerializer, ProjectRetrieveSerializer, \
     ProjectListSerializer, ProjectDiscussFormSerializer
@@ -14,15 +16,21 @@ from post_office import mail
 class ProjectViewSet(ModelViewSet):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    permission_classes = [IsAuthenticatedOrReadOnly]
     serializer_list = {
         'retrieve': ProjectRetrieveSerializer,
         'list': ProjectListSerializer,
-        'discuss': ProjectDiscussFormSerializer,
     }
 
-    @action(detail=False, methods=['post'])
-    def discuss(self, request):
+
+class ProjectDiscussAPIView(APIView):
+    permission_classes = [AllowAny]
+    serializer_list = {
+        'discuss': ProjectDiscussFormSerializer,
+    }
+    metadata_class = OptionsMetadata
+
+    def post(self, request, *args, **kwargs):
         serializer = ProjectDiscussFormSerializer(data=request.data)
         if serializer.is_valid():
             name = serializer.validated_data.get('name')
@@ -44,3 +52,4 @@ class ProjectViewSet(ModelViewSet):
             return Response({"success": True}, status=status.HTTP_200_OK)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
