@@ -1,9 +1,3 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -19,121 +13,121 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 #: projects_app/models.py:7 projects_app/models.py:19
 msgid "Название"
-msgstr ""
+msgstr "Title"
 
 #: projects_app/models.py:13
 msgid "Метка"
-msgstr ""
+msgstr "Tag"
 
 #: projects_app/models.py:14 projects_app/models.py:28
 msgid "Метки"
-msgstr ""
+msgstr "Tags"
 
 #: projects_app/models.py:21
 msgid "Файл заголовка"
-msgstr ""
+msgstr "Header file"
 
 #: projects_app/models.py:22
 msgid "HTML заголовка"
-msgstr ""
+msgstr "Header HTML"
 
 #: projects_app/models.py:23
 msgid "Описание"
-msgstr ""
+msgstr "Description"
 
 #: projects_app/models.py:24
 msgid "Ссылка"
-msgstr ""
+msgstr "URL"
 
 #: projects_app/models.py:25
 msgid "Дата"
-msgstr ""
+msgstr "Date"
 
 #: projects_app/models.py:27
 msgid "Колонка отображения на главной"
-msgstr ""
+msgstr "Column on main page display"
 
 #: projects_app/models.py:38
 msgid "Проект"
-msgstr ""
+msgstr "Project"
 
 #: projects_app/models.py:39
 msgid "Проекты"
-msgstr ""
+msgstr "Projects"
 
 #: projects_app/models.py:59
 msgid "Плитка"
-msgstr ""
+msgstr "Tile"
 
 #: projects_app/models.py:60
 msgid "Слайдер"
-msgstr ""
+msgstr "Slider"
 
 #: projects_app/models.py:63
 msgid "Тип галереи"
-msgstr ""
+msgstr "Gallery type"
 
 #: projects_app/models.py:67
 #, python-brace-format
 msgid "Галерея для контента {id}"
-msgstr ""
+msgstr "Gallery for content {id}"
 
 #: projects_app/models.py:70 projects_app/models.py:77
 #: projects_app/models.py:103 projects_app/models.py:120
 msgid "Галерея"
-msgstr ""
+msgstr "Gallery"
 
 #: projects_app/models.py:71
 msgid "Галереи"
-msgstr ""
+msgstr "Galleries"
 
 #: projects_app/models.py:78 projects_app/models.py:102
 #: projects_app/models.py:118
 msgid "Изображение"
-msgstr ""
+msgstr "Image"
 
 #: projects_app/models.py:82
 #, python-brace-format
 msgid "Изображение {id} в галерее {gallery_id}"
-msgstr ""
+msgstr "Image {id} in gallery {gallery_id}"
 
 #: projects_app/models.py:85
 msgid "Изображение галереи"
-msgstr ""
+msgstr "Gallery image"
 
 #: projects_app/models.py:86
 msgid "Изображения галереи"
-msgstr ""
+msgstr "Gallery images"
 
 #: projects_app/models.py:99 projects_app/models.py:110
 msgid "Текст"
-msgstr ""
+msgstr "Text"
 
 #: projects_app/models.py:100 projects_app/models.py:112
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: projects_app/models.py:101 projects_app/models.py:115
 msgid "Файл"
-msgstr ""
+msgstr "File"
 
 #: projects_app/models.py:108
 msgid "Тип контента"
-msgstr ""
+msgstr "Content type"
 
 #: projects_app/models.py:113
 msgid "Отображаемое имя ссылки"
-msgstr ""
+msgstr "Link display name"
 
 #: projects_app/models.py:116
 msgid "Отображаемое имя файла"
-msgstr ""
+msgstr "File display name"
 
 #: projects_app/models.py:125
 #, python-brace-format
 msgid "Контент {id} для {project_title}"
-msgstr ""
+msgstr "Content {id} for {project_title}"
 
 #: projects_app/models.py:128 projects_app/models.py:129
 msgid "Контент"
-msgstr ""
+msgstr "Content"
