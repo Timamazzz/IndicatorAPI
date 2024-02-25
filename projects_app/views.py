@@ -1,3 +1,4 @@
+from django.core.files.base import ContentFile
 from rest_framework import status
 from rest_framework.permissions import AllowAny, IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
@@ -57,7 +58,7 @@ class ProjectDiscussAPIView(APIView):
             print('files', files)
             send_files = {}
             for file in files:
-                send_files[file.name] = file.temporary_file_path()
+                send_files[file.name] = ContentFile(file)
 
             subject = _("Новое обсуждение проекта")
             message = _("Имя: {name}\nТелефон: {phone}\nЭлектронная почта: {email}\nОписание: {description}").format(
