@@ -1,0 +1,142 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-25 21:04+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: contacts_app/models.py:6
+msgid "Название бегущей строки"
+msgstr ""
+
+#: contacts_app/models.py:7 contacts_app/models.py:30 contacts_app/models.py:65
+msgid "Активно"
+msgstr ""
+
+#: contacts_app/models.py:10 contacts_app/models.py:19
+msgid "Бегущая строка"
+msgstr ""
+
+#: contacts_app/models.py:11
+msgid "Бегущие строки"
+msgstr ""
+
+#: contacts_app/models.py:20 contacts_app/models.py:23
+msgid "Текст бегущей строки"
+msgstr ""
+
+#: contacts_app/models.py:24
+msgid "Тексты бегущих строк"
+msgstr ""
+
+#: contacts_app/models.py:28
+msgid "Телефон"
+msgstr ""
+
+#: contacts_app/models.py:29
+msgid "Email"
+msgstr ""
+
+#: contacts_app/models.py:33 contacts_app/models.py:40
+msgid "Контакт"
+msgstr ""
+
+#: contacts_app/models.py:34
+msgid "Контакты"
+msgstr ""
+
+#: contacts_app/models.py:38
+msgid "Название"
+msgstr ""
+
+#: contacts_app/models.py:39
+msgid "URL"
+msgstr ""
+
+#: contacts_app/models.py:43
+msgid "Ссылка контакта"
+msgstr ""
+
+#: contacts_app/models.py:44
+msgid "Ссылки контакта"
+msgstr ""
+
+#: contacts_app/models.py:48
+msgid "Название ссылки"
+msgstr ""
+
+#: contacts_app/models.py:49
+msgid "URL ссылки"
+msgstr ""
+
+#: contacts_app/models.py:52
+msgid "Ссылка заказчика"
+msgstr ""
+
+#: contacts_app/models.py:53
+msgid "Ссылки заказчиков"
+msgstr ""
+
+#: contacts_app/models.py:57
+msgid "Наименование"
+msgstr ""
+
+#: contacts_app/models.py:58
+msgid "Свидетельство"
+msgstr ""
+
+#: contacts_app/models.py:59
+msgid "ИНН"
+msgstr ""
+
+#: contacts_app/models.py:60
+msgid "ОГРНИП"
+msgstr ""
+
+#: contacts_app/models.py:61
+msgid "Расчетный счет"
+msgstr ""
+
+#: contacts_app/models.py:62
+msgid "БИК"
+msgstr ""
+
+#: contacts_app/models.py:63
+msgid "Банк"
+msgstr ""
+
+#: contacts_app/models.py:64
+msgid "Корреспондентский счет"
+msgstr ""
+
+#: contacts_app/models.py:68
+msgid "Реквизит"
+msgstr ""
+
+#: contacts_app/models.py:69
+msgid "Реквизиты"
+msgstr ""
+
+#: contacts_app/signals.py:13
+msgid "Может быть только одна активная строка!"
+msgstr ""
+
+#: contacts_app/signals.py:21
+msgid "Может быть только один активный реквизит!"
+msgstr ""
+
+#: contacts_app/signals.py:29
+msgid "Может быть только один активный контакт!"
+msgstr ""

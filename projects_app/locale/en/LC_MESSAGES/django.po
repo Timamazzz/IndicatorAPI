@@ -1,0 +1,139 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-25 21:04+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: projects_app/models.py:7 projects_app/models.py:19
+msgid "Название"
+msgstr ""
+
+#: projects_app/models.py:13
+msgid "Метка"
+msgstr ""
+
+#: projects_app/models.py:14 projects_app/models.py:28
+msgid "Метки"
+msgstr ""
+
+#: projects_app/models.py:21
+msgid "Файл заголовка"
+msgstr ""
+
+#: projects_app/models.py:22
+msgid "HTML заголовка"
+msgstr ""
+
+#: projects_app/models.py:23
+msgid "Описание"
+msgstr ""
+
+#: projects_app/models.py:24
+msgid "Ссылка"
+msgstr ""
+
+#: projects_app/models.py:25
+msgid "Дата"
+msgstr ""
+
+#: projects_app/models.py:27
+msgid "Колонка отображения на главной"
+msgstr ""
+
+#: projects_app/models.py:38
+msgid "Проект"
+msgstr ""
+
+#: projects_app/models.py:39
+msgid "Проекты"
+msgstr ""
+
+#: projects_app/models.py:59
+msgid "Плитка"
+msgstr ""
+
+#: projects_app/models.py:60
+msgid "Слайдер"
+msgstr ""
+
+#: projects_app/models.py:63
+msgid "Тип галереи"
+msgstr ""
+
+#: projects_app/models.py:67
+#, python-brace-format
+msgid "Галерея для контента {id}"
+msgstr ""
+
+#: projects_app/models.py:70 projects_app/models.py:77
+#: projects_app/models.py:103 projects_app/models.py:120
+msgid "Галерея"
+msgstr ""
+
+#: projects_app/models.py:71
+msgid "Галереи"
+msgstr ""
+
+#: projects_app/models.py:78 projects_app/models.py:102
+#: projects_app/models.py:118
+msgid "Изображение"
+msgstr ""
+
+#: projects_app/models.py:82
+#, python-brace-format
+msgid "Изображение {id} в галерее {gallery_id}"
+msgstr ""
+
+#: projects_app/models.py:85
+msgid "Изображение галереи"
+msgstr ""
+
+#: projects_app/models.py:86
+msgid "Изображения галереи"
+msgstr ""
+
+#: projects_app/models.py:99 projects_app/models.py:110
+msgid "Текст"
+msgstr ""
+
+#: projects_app/models.py:100 projects_app/models.py:112
+msgid "URL"
+msgstr ""
+
+#: projects_app/models.py:101 projects_app/models.py:115
+msgid "Файл"
+msgstr ""
+
+#: projects_app/models.py:108
+msgid "Тип контента"
+msgstr ""
+
+#: projects_app/models.py:113
+msgid "Отображаемое имя ссылки"
+msgstr ""
+
+#: projects_app/models.py:116
+msgid "Отображаемое имя файла"
+msgstr ""
+
+#: projects_app/models.py:125
+#, python-brace-format
+msgid "Контент {id} для {project_title}"
+msgstr ""
+
+#: projects_app/models.py:128 projects_app/models.py:129
+msgid "Контент"
+msgstr ""
