@@ -17,10 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include, re_path
 from django.views.static import serve
+from django.conf.urls.i18n import i18n_patterns
 
 from IndicatorAPI import settings
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
     path('api/users/', include('users_app.urls')),
     path('api/projects/', include('projects_app.urls')),
@@ -28,4 +29,4 @@ urlpatterns = [
     re_path(r'^media/(?P<path>.*)$', serve,
             {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
 
-]
+)

@@ -1,21 +1,23 @@
 from django.contrib import admin
+
 from .models import RunningLine, RunningText, Contact, ContactsLink, CustomerLink, Requisite
+from modeltranslation.admin import TranslationAdmin, TranslationInlineModelAdmin, TranslationTabularInline
 
 
-class RunningTextInline(admin.TabularInline):
+class RunningTextInline(TranslationTabularInline):
     model = RunningText
 
 
-class ContactsLinkInline(admin.TabularInline):
+class ContactsLinkInline(TranslationTabularInline):
     model = ContactsLink
 
 
-class CustomerLinkInline(admin.TabularInline):
+class CustomerLinkInline(TranslationTabularInline):
     model = CustomerLink
 
 
 @admin.register(RunningLine)
-class RunningLineAdmin(admin.ModelAdmin):
+class RunningLineAdmin(TranslationAdmin):
     inlines = [RunningTextInline]
     list_display = ('name', 'is_active')
 

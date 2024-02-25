@@ -10,6 +10,7 @@ from projects_app.models import Project, UniqueProjectView
 from projects_app.serializers.project_serializers import ProjectSerializer, ProjectRetrieveSerializer, \
     ProjectListSerializer, ProjectDiscussFormSerializer
 from post_office import mail
+from django.utils.translation import gettext_lazy as _
 
 
 # Create your views here.
@@ -52,19 +53,34 @@ class ProjectDiscussAPIView(APIView):
             phone = serializer.validated_data.get('phone')
             email = serializer.validated_data.get('email')
             description = serializer.validated_data.get('description')
+            files = request.FILES.getlist('files')
+            send_files = {}
+            for file in files:
+                send_files[file.name] = file.read()
 
-            subject = "New Project Discussion"
-            message = f"Name: {name}\nPhone: {phone}\nEmail: {email}\nDescription: {description}"
-            html_message = f"<p><strong>Name:</strong> {name}</p><p><strong>Phone:</strong> {phone}</p><p><strong>Email:</strong> {email}</p><p><strong>Description:</strong> {description}</p>"
+            subject = "Новое обсуждение проекта"
+            message = (
+                          "Имя: %(name)s\n"
+                          "Телефон: %(phone)s\n"
+                          "Электронная почта: %(email)s\n"
+                          "Описание: %(description)s"
+                      ) % {'name': name, 'phone': phone, 'email': email, 'description': description}
+            html_message = (
+                               "<p><strong>Имя:</strong> %(name)s</p>"
+                               "<p><strong>Телефон:</strong> %(phone)s</p>"
+                               "<p><strong>Электронная почта:</strong> %(email)s</p>"
+                               "<p><strong>Описание:</strong> %(description)s</p>"
+                           ) % {'name': name, 'phone': phone, 'email': email, 'description': description}
             mail.send(
                 '89205731783@mail.ru',
                 settings.DEFAULT_FROM_EMAIL,
                 subject=subject,
                 message=message,
                 html_message=html_message,
-                priority='now'
+                priority='now',
+                attachments=send_files
             )
             return Response({"success": True}, status=status.HTTP_200_OK)
         else:
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
