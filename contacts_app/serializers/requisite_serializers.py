@@ -14,3 +14,13 @@ class RequisiteGetActiveSerializer(serializers.ModelSerializer):
     class Meta:
         model = Requisite
         exclude = ('is_active',)
+        labels = {
+            'name': 'Наименование',
+            'certificate': 'Свидетельство',
+            'inn': 'ИНН',
+            'ogrnip': 'ОГРНИП',
+            'checking_account': 'Расчетный счет',
+            'bik': 'БИК',
+            'bank': 'Банк',
+            'correspondent_account': 'Корреспондентский счет',
+        }

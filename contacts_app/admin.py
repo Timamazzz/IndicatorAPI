@@ -29,4 +29,4 @@ class ContactAdmin(admin.ModelAdmin):
 @admin.register(Requisite)
 class RequisiteAdmin(admin.ModelAdmin):
     list_display = (
-    'name', 'certificate', 'inn', 'ogrnip', 'checking_account', 'bik', 'bank', 'correspondent_account', 'is_active')
+        'name', 'certificate', 'inn', 'ogrnip', 'checking_account', 'bik', 'bank', 'correspondent_account', 'is_active')
