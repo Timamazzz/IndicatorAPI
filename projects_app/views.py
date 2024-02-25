@@ -19,8 +19,8 @@ class ProjectViewSet(ModelViewSet):
     serializer_class = ProjectSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
     serializer_list = {
-        'retrieve': ProjectRetrieveSerializer,
-        # 'list': ProjectListSerializer,
+        # 'retrieve': ProjectRetrieveSerializer,
+        'list': ProjectListSerializer,
     }
 
     def retrieve(self, request, *args, **kwargs):
