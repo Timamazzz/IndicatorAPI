@@ -55,8 +55,6 @@ class ProjectDiscussAPIView(APIView):
             email = serializer.validated_data.get('email')
             description = serializer.validated_data.get('description')
             files = request.FILES.values()
-            print('files', files)
-            print('request', request.__dict__)
             send_files = {}
             for file in files:
                 send_files[file.name] = ContentFile(file.read(), name=file.name)
