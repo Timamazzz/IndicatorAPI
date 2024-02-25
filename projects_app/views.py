@@ -19,7 +19,7 @@ class ProjectViewSet(ModelViewSet):
     serializer_class = ProjectSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
     serializer_list = {
-        # 'retrieve': ProjectRetrieveSerializer,
+        'retrieve': ProjectRetrieveSerializer,
         # 'list': ProjectListSerializer,
     }
 
