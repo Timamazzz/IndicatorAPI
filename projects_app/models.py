@@ -1,35 +1,32 @@
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 
 class Tag(models.Model):
-    name = models.CharField(max_length=50, unique=True, verbose_name='Название')
+    name = models.CharField(max_length=50, unique=True, verbose_name=_('Название'))
 
     def __str__(self):
         return self.name
 
     class Meta:
-        verbose_name = 'Метка'
-        verbose_name_plural = 'Метки'
+        verbose_name = _('Метка')
+        verbose_name_plural = _('Метки')
         app_label = 'projects_app'
 
 
 class Project(models.Model):
-    title = models.CharField(max_length=100, verbose_name='Название')
-
-    header_file = models.FileField(upload_to='projects/headers/', blank=True, null=True, verbose_name='Файл заголовка')
-    header_html = models.TextField(blank=True, null=True, verbose_name='HTML заголовка')
-
-    description = models.TextField(verbose_name='Описание')
-
-    url = models.URLField(blank=True, null=True, verbose_name='Ссылка')
-
-    date = models.DateField(verbose_name='Дата')
-
+    title = models.CharField(max_length=100, verbose_name=_('Название'))
+    header_file = models.FileField(upload_to='projects/headers/', blank=True, null=True,
+                                   verbose_name=_('Файл заголовка'))
+    header_html = models.TextField(blank=True, null=True, verbose_name=_('HTML заголовка'))
+    description = models.TextField(verbose_name=_('Описание'))
+    url = models.URLField(blank=True, null=True, verbose_name=_('Ссылка'))
+    date = models.DateField(verbose_name=_('Дата'))
     column = models.PositiveIntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(3)],
-                                         verbose_name="Колонка отображения на главной")
-    tags = models.ManyToManyField(Tag, blank=True, related_name='projects', verbose_name='Метки')
-    order = models.PositiveIntegerField(default=0, blank=False, null=False, )
+                                         verbose_name=_("Колонка отображения на главной"))
+    tags = models.ManyToManyField(Tag, blank=True, related_name='projects', verbose_name=_('Метки'))
+    order = models.PositiveIntegerField(default=0, blank=False, null=False)
 
     def __str__(self):
         return self.title
@@ -38,8 +35,8 @@ class Project(models.Model):
         return self.uniqueprojectview_set.count()
 
     class Meta:
-        verbose_name = 'Проект'
-        verbose_name_plural = 'Проекты'
+        verbose_name = _('Проект')
+        verbose_name_plural = _('Проекты')
         ordering = ['order']
         app_label = 'projects_app'
 
@@ -59,34 +56,34 @@ class Gallery(models.Model):
     SLIDER = 'slider'
 
     GALLERY_TYPE_CHOICES = [
-        (TILE, 'Плитка'),
-        (SLIDER, 'Слайдер'),
+        (TILE, _('Плитка')),
+        (SLIDER, _('Слайдер')),
     ]
 
-    type = models.CharField(max_length=20, choices=GALLERY_TYPE_CHOICES, default=TILE, verbose_name='Тип галереи')
-    order = models.PositiveIntegerField(default=0, blank=False, null=False, )
+    type = models.CharField(max_length=20, choices=GALLERY_TYPE_CHOICES, default=TILE, verbose_name=_('Тип галереи'))
+    order = models.PositiveIntegerField(default=0, blank=False, null=False)
 
     def __str__(self):
-        return f'Gallery for Content {self.id}'
+        return _('Галерея для контента {id}').format(id=self.id)
 
     class Meta:
-        verbose_name = 'Галлерея'
-        verbose_name_plural = 'Галлереи'
+        verbose_name = _('Галерея')
+        verbose_name_plural = _('Галереи')
         ordering = ['order']
         app_label = 'projects_app'
 
 
 class GalleryImage(models.Model):
-    gallery = models.ForeignKey(Gallery, on_delete=models.CASCADE, related_name='images', verbose_name='Галерея')
-    file = models.FileField(upload_to='projects/gallery_images/', verbose_name='Изображение')
-    order = models.PositiveIntegerField(default=0, blank=False, null=False, )
+    gallery = models.ForeignKey(Gallery, on_delete=models.CASCADE, related_name='images', verbose_name=_('Галерея'))
+    file = models.FileField(upload_to='projects/gallery_images/', verbose_name=_('Изображение'))
+    order = models.PositiveIntegerField(default=0, blank=False, null=False)
 
     def __str__(self):
-        return f'Image {self.id} in Gallery {self.gallery.id}'
+        return _('Изображение {id} в галерее {gallery_id}').format(id=self.id, gallery_id=self.gallery.id)
 
     class Meta:
-        verbose_name = 'Изображение галлереи'
-        verbose_name_plural = 'Изображения галлереи'
+        verbose_name = _('Изображение галереи')
+        verbose_name_plural = _('Изображения галереи')
         ordering = ['order']
         app_label = 'projects_app'
 
@@ -99,36 +96,36 @@ class Content(models.Model):
     GALLERY = 'gallery'
 
     CONTENT_TYPE_CHOICES = [
-        (TEXT, 'Текст'),
-        (URL, 'URL'),
-        (FILE, 'Файл'),
-        (Image, 'Изображение'),
-        (GALLERY, 'Галерея')
+        (TEXT, _('Текст')),
+        (URL, _('URL')),
+        (FILE, _('Файл')),
+        (Image, _('Изображение')),
+        (GALLERY, _('Галерея')),
     ]
 
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='contents')
     content_type = models.CharField(max_length=20, choices=CONTENT_TYPE_CHOICES, default=TEXT,
-                                    verbose_name='Тип контента')
+                                    verbose_name=_('Тип контента'))
 
-    text = models.TextField(blank=True, null=True, verbose_name='Текст')
+    text = models.TextField(blank=True, null=True, verbose_name=_('Текст'))
 
-    url = models.URLField(blank=True, null=True, verbose_name='URL')
-    url_name = models.CharField(max_length=1024, blank=True, null=True, verbose_name='Отображаемое имя ссылки')
+    url = models.URLField(blank=True, null=True, verbose_name=_('URL'))
+    url_name = models.CharField(max_length=1024, blank=True, null=True, verbose_name=_('Отображаемое имя ссылки'))
 
-    file = models.FileField(upload_to='projects/files/', null=True, blank=True, verbose_name='Файл')
-    file_name = models.CharField(max_length=1024, blank=True, null=True, verbose_name='Отображаемое имя файла')
+    file = models.FileField(upload_to='projects/files/', null=True, blank=True, verbose_name=_('Файл'))
+    file_name = models.CharField(max_length=1024, blank=True, null=True, verbose_name=_('Отображаемое имя файла'))
 
-    image = models.FileField(upload_to='projects/images/', null=True, blank=True, verbose_name='Изображение')
+    image = models.FileField(upload_to='projects/images/', null=True, blank=True, verbose_name=_('Изображение'))
 
-    gallery = models.ForeignKey(Gallery, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Галлерея')
+    gallery = models.ForeignKey(Gallery, on_delete=models.SET_NULL, null=True, blank=True, verbose_name=_('Галерея'))
 
-    order = models.PositiveIntegerField(default=0, blank=False, null=False, )
+    order = models.PositiveIntegerField(default=0, blank=False, null=False)
 
     def __str__(self):
-        return f'Content {self.id} for {self.project.title}'
+        return _('Контент {id} для {project_title}').format(id=self.id, project_title=self.project.title)
 
     class Meta:
-        verbose_name = 'Контент'
-        verbose_name_plural = 'Контент'
+        verbose_name = _('Контент')
+        verbose_name_plural = _('Контент')
         ordering = ['order']
         app_label = 'projects_app'
