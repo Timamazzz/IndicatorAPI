@@ -135,27 +135,26 @@ msgstr "Content"
 
 #: projects_app/serializers/project_serializers.py:36
 msgid "Ваше имя"
-msgstr ""
+msgstr "Your name"
 
 #: projects_app/serializers/project_serializers.py:37
 msgid "Телефон"
-msgstr ""
+msgstr "Phone"
 
 #: projects_app/serializers/project_serializers.py:38
 msgid "Электронная почта"
-msgstr ""
+msgstr "Email"
 
 #: projects_app/serializers/project_serializers.py:39
 #, fuzzy
-#| msgid "Новое обсуждение проекта"
 msgid "Описание проекта"
-msgstr "New Project Discussion"
+msgstr "Project Discussion"
 
 #: projects_app/serializers/project_serializers.py:40
 #, fuzzy
 #| msgid "Файл"
 msgid "Файлы"
-msgstr "File"
+msgstr "Files"
 
 #: projects_app/views.py:62
 msgid "Новое обсуждение проекта"
