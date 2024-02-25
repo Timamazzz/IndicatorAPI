@@ -4,6 +4,7 @@ from rest_framework import serializers
 from IndicatorAPI.utils.fields import PhoneField
 from projects_app.models import Project
 from projects_app.serializers.content_serializers import ContentForProjectSerializer
+from django.utils.translation import gettext_lazy as _
 
 
 class ProjectSerializer(serializers.ModelSerializer):
@@ -32,8 +33,8 @@ class ProjectRetrieveSerializer(WritableNestedModelSerializer):
 
 
 class ProjectDiscussFormSerializer(serializers.Serializer):
-    name = serializers.CharField(required=True, label="Ваше имя", style={'column': 1})
-    phone = PhoneField(required=True, label="Телефон", style={'column': 2})
-    email = serializers.EmailField(required=True, label="Электронная почта", style={'column': 3})
-    description = serializers.CharField(required=True, label="Описание проекта", style={'column': 1})
-    files = serializers.FileField(required=False, label="Файлы", style={'column': 1})
+    name = serializers.CharField(required=True, label=_("Ваше имя"), style={'column': 1})
+    phone = PhoneField(required=True, label=_("Телефон"), style={'column': 2})
+    email = serializers.EmailField(required=True, label=_("Электронная почта"), style={'column': 3})
+    description = serializers.CharField(required=True, label=_("Описание проекта"), style={'column': 1})
+    files = serializers.FileField(required=False, label=_("Файлы"), style={'column': 1})
