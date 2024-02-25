@@ -58,19 +58,15 @@ class ProjectDiscussAPIView(APIView):
             for file in files:
                 send_files[file.name] = file.read()
 
-            subject = "Новое обсуждение проекта"
-            message = (
-                          "Имя: %(name)s\n"
-                          "Телефон: %(phone)s\n"
-                          "Электронная почта: %(email)s\n"
-                          "Описание: %(description)s"
-                      ) % {'name': name, 'phone': phone, 'email': email, 'description': description}
-            html_message = (
-                               "<p><strong>Имя:</strong> %(name)s</p>"
-                               "<p><strong>Телефон:</strong> %(phone)s</p>"
-                               "<p><strong>Электронная почта:</strong> %(email)s</p>"
-                               "<p><strong>Описание:</strong> %(description)s</p>"
-                           ) % {'name': name, 'phone': phone, 'email': email, 'description': description}
+            subject = _("Новое обсуждение проекта")
+            message = _("Имя: {name}\nТелефон: {phone}\nЭлектронная почта: {email}\nОписание: {description}").format(
+                name=name, phone=phone, email=email, description=description
+            )
+            html_message = _(
+                "<p><strong>Имя:</strong> {name}</p><p><strong>Телефон:</strong> {phone}</p><p><strong>Электронная почта:</strong> {email}</p><p><strong>Описание:</strong> {description}</p>").format(
+                name=name, phone=phone, email=email, description=description
+            )
+
             mail.send(
                 '89205731783@mail.ru',
                 settings.DEFAULT_FROM_EMAIL,
