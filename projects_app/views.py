@@ -57,7 +57,7 @@ class ProjectDiscussAPIView(APIView):
             print('files', files)
             send_files = {}
             for file in files:
-                send_files[file.name] = file.read()
+                send_files[file.name] = file.temporary_file_path()
 
             subject = _("Новое обсуждение проекта")
             message = _("Имя: {name}\nТелефон: {phone}\nЭлектронная почта: {email}\nОписание: {description}").format(
