@@ -133,10 +133,6 @@ msgstr "Content {id} for {project_title}"
 msgid "Контент"
 msgstr "Content"
 
-#: projects_app/views.py:61
-msgid "Новое обсуждение проекта"
-msgstr ""
-
 #: projects_app/views.py:62
 #, python-brace-format
 msgid "Новое обсуждение проекта"
