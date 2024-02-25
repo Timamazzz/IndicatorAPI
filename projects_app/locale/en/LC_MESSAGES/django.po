@@ -146,13 +146,10 @@ msgid "Электронная почта"
 msgstr "Email"
 
 #: projects_app/serializers/project_serializers.py:39
-#, fuzzy
 msgid "Описание проекта"
 msgstr "Project Discussion"
 
 #: projects_app/serializers/project_serializers.py:40
-#, fuzzy
-#| msgid "Файл"
 msgid "Файлы"
 msgstr "Files"
 
