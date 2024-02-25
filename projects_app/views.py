@@ -54,7 +54,7 @@ class ProjectDiscussAPIView(APIView):
             phone = serializer.validated_data.get('phone')
             email = serializer.validated_data.get('email')
             description = serializer.validated_data.get('description')
-            files = request.FILES
+            files = request.FILES.getlist('files')
             print('files', files)
             print('request', request.__dict__)
             send_files = {}
