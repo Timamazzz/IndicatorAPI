@@ -20,4 +20,4 @@ class ContactGetActiveSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Contact
-        fields = ('phone', 'email')
+        fields = ('phone', 'email', 'urls')

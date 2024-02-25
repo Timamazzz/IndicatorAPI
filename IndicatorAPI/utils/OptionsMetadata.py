@@ -76,7 +76,7 @@ class OptionsMetadata(SimpleMetadata):
                 field_info[attr] = force_str(value, strings_only=True)
 
         self.set_styles_field(field_info, field)
-
+        print('field.child', field.child)
         if getattr(field, 'child', None):
             field_info['child'] = self.get_field_info(field.child)
         elif getattr(field, 'fields', None):
