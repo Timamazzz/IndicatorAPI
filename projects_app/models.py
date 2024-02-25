@@ -2,6 +2,18 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 
 
+class Tag(models.Model):
+    name = models.CharField(max_length=50, unique=True, verbose_name='Название')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Метка'
+        verbose_name_plural = 'Метки'
+        app_label = 'projects_app'
+
+
 class Project(models.Model):
     title = models.CharField(max_length=100, verbose_name='Название')
 
@@ -14,17 +26,32 @@ class Project(models.Model):
 
     date = models.DateField(verbose_name='Дата')
 
-    column = models.PositiveIntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(3)], verbose_name="Колонка отображения на главной")
+    column = models.PositiveIntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(3)],
+                                         verbose_name="Колонка отображения на главной")
+    tags = models.ManyToManyField(Tag, blank=True, related_name='projects', verbose_name='Метки')
     order = models.PositiveIntegerField(default=0, blank=False, null=False, )
 
     def __str__(self):
         return self.title
+
+    def get_views_count(self):
+        return self.uniqueprojectview_set.count()
 
     class Meta:
         verbose_name = 'Проект'
         verbose_name_plural = 'Проекты'
         ordering = ['order']
         app_label = 'projects_app'
+
+
+class UniqueProjectView(models.Model):
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    ip_address = models.CharField(max_length=45)
+    user_agent = models.CharField(max_length=255)
+    viewed_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('project', 'ip_address', 'user_agent')
 
 
 class Gallery(models.Model):

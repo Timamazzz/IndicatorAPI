@@ -13,6 +13,11 @@ class ProjectSerializer(serializers.ModelSerializer):
 
 
 class ProjectListSerializer(serializers.ModelSerializer):
+    views = serializers.SerializerMethodField()
+
+    def get_views(self, obj):
+        return obj.get_views_count()
+
     class Meta:
         model = Project
         exclude = ('date',)
