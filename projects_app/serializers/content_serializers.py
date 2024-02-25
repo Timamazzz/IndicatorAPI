@@ -30,4 +30,4 @@ class ContentForProjectSerializer(WritableNestedModelSerializer):
 
     class Meta:
         model = Content
-        exclude = ('project', )
+        fields = ('content_type', 'text', 'url', 'url_name', 'file', 'file_name', 'image', 'gallery')

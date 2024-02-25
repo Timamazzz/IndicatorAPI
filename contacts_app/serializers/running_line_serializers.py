@@ -20,4 +20,4 @@ class RunningLineGetActiveSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = RunningLine
-        exclude = ('is_active',)
+        fields = ('name', 'running_texts', )

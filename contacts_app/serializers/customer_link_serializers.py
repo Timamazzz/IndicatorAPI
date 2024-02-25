@@ -12,5 +12,5 @@ class CustomerLinkSerializer(serializers.ModelSerializer):
 class CustomerLinkListSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomerLink
-        fields = '__all__'
+        fields = ('name', 'url')
 

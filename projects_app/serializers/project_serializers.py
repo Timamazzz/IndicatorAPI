@@ -19,8 +19,8 @@ class ProjectListSerializer(serializers.ModelSerializer):
         return obj.get_views_count()
 
     class Meta:
-        model = Project
-        exclude = ('date',)
+        model = Project,
+        fields = ('id', 'views', 'header_file', 'header_html', 'title', 'description', 'tags')
 
 
 class ProjectRetrieveSerializer(WritableNestedModelSerializer):

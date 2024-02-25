@@ -12,7 +12,7 @@ class ContactSerializer(serializers.ModelSerializer):
 class ContactsLinkSerializer(serializers.ModelSerializer):
     class Meta:
         model = ContactsLink
-        exclude = ('contact',)
+        fields = ('name', 'url')
 
 
 class ContactGetActiveSerializer(serializers.ModelSerializer):
@@ -20,4 +20,4 @@ class ContactGetActiveSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Contact
-        exclude = ('is_active',)
+        fields = ('phone', 'email')
