@@ -139,12 +139,21 @@ msgstr ""
 
 #: projects_app/views.py:62
 #, python-brace-format
+msgid "Новое обсуждение проекта"
+msgstr "New Project Discussion"
+
+#: projects_app/views.py:62
+#, python-brace-format
 msgid ""
 "Имя: {name}\n"
 "Телефон: {phone}\n"
 "Электронная почта: {email}\n"
 "Описание: {description}"
 msgstr ""
+"Name: {name}\n"
+"Phone: {phone}\n"
+"Email: {email}\n"
+"Description: {description}"
 
 #: projects_app/views.py:66
 #, python-brace-format
@@ -153,3 +162,5 @@ msgid ""
 "p><p><strong>Электронная почта:</strong> {email}</p><p><strong>Описание:</"
 "strong> {description}</p>"
 msgstr ""
+"<p><strong>Name:</strong> {name}</p><p><strong>Phone:</strong> {phone}</p><"
+"p><strong>Email:</strong> {email}</p><p><strong>Description:</strong> {description}</p>"
