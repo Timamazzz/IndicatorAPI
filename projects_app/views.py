@@ -5,7 +5,6 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from IndicatorAPI import settings
-from IndicatorAPI.settings import EMAIL_USE_SSL, EMAIL_USE_TLS
 from IndicatorAPI.utils.ModelViewSet import ModelViewSet
 from IndicatorAPI.utils.OptionsMetadata import OptionsMetadata
 from projects_app.models import Project, UniqueProjectView
@@ -56,9 +55,6 @@ class ProjectDiscussAPIView(APIView):
             email = serializer.validated_data.get('email')
             description = serializer.validated_data.get('description')
             files = request.FILES.getlist('files')
-            print('files', files)
-            print('EMAIL_USE_SSL', EMAIL_USE_SSL)
-            print('EMAIL_USE_TLS', EMAIL_USE_TLS)
             send_files = {}
             for file in files:
                 send_files[file.name] = ContentFile(file.read(), name=file.name)
