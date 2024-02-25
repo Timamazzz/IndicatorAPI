@@ -68,7 +68,7 @@ class ProjectDiscussAPIView(APIView):
             )
 
             mail.send(
-                '89205731783@mail.ru',
+                'timforworking@mail.ru',
                 settings.DEFAULT_FROM_EMAIL,
                 subject=subject,
                 message=message,
