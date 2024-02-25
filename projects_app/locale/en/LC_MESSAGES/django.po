@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-25 21:04+0300\n"
+"POT-Creation-Date: 2024-02-25 22:46+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -11,6 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
 #: projects_app/models.py:7 projects_app/models.py:19
 msgid "Название"
 msgstr "Title"
@@ -131,3 +132,24 @@ msgstr "Content {id} for {project_title}"
 #: projects_app/models.py:128 projects_app/models.py:129
 msgid "Контент"
 msgstr "Content"
+
+#: projects_app/views.py:61
+msgid "Новое обсуждение проекта"
+msgstr ""
+
+#: projects_app/views.py:62
+#, python-brace-format
+msgid ""
+"Имя: {name}\n"
+"Телефон: {phone}\n"
+"Электронная почта: {email}\n"
+"Описание: {description}"
+msgstr ""
+
+#: projects_app/views.py:66
+#, python-brace-format
+msgid ""
+"<p><strong>Имя:</strong> {name}</p><p><strong>Телефон:</strong> {phone}</"
+"p><p><strong>Электронная почта:</strong> {email}</p><p><strong>Описание:</"
+"strong> {description}</p>"
+msgstr ""
