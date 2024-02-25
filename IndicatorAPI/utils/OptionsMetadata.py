@@ -60,6 +60,7 @@ class OptionsMetadata(SimpleMetadata):
         return fields
 
     def get_field_info(self, field):
+        print('field', field)
         field_info = OrderedDict()
         field_info['type'] = self.label_lookup[field]
         field_info['required'] = getattr(field, 'required', False)
