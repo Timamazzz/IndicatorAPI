@@ -7,6 +7,7 @@ from rest_framework.views import APIView
 from IndicatorAPI import settings
 from IndicatorAPI.utils.ModelViewSet import ModelViewSet
 from IndicatorAPI.utils.OptionsMetadata import OptionsMetadata
+from contacts_app.models import Contact
 from projects_app.models import Project, UniqueProjectView
 from projects_app.serializers.project_serializers import ProjectSerializer, ProjectRetrieveSerializer, \
     ProjectListSerializer, ProjectDiscussFormSerializer
@@ -50,6 +51,11 @@ class ProjectDiscussAPIView(APIView):
     def post(self, request, *args, **kwargs):
         serializer = ProjectDiscussFormSerializer(data=request.data)
         if serializer.is_valid():
+
+            contact = Contact.objects.filter(is_active=True).first()
+            if not contact:
+                return Response({"success": True}, status=status.HTTP_200_OK)
+
             name = serializer.validated_data.get('name')
             phone = serializer.validated_data.get('phone')
             email = serializer.validated_data.get('email')
@@ -67,16 +73,16 @@ class ProjectDiscussAPIView(APIView):
                 "<p><strong>Имя:</strong> {name}</p><p><strong>Телефон:</strong> {phone}</p><p><strong>Электронная почта:</strong> {email}</p><p><strong>Описание:</strong> {description}</p>").format(
                 name=name, phone=phone, email=email, description=description
             )
-
-            mail.send(
-                'timforworking@mail.ru',
-                settings.DEFAULT_FROM_EMAIL,
-                subject=subject,
-                message=message,
-                html_message=html_message,
-                priority='now',
-                attachments=send_files
-            )
+            if contact.email:
+                mail.send(
+                    contact.email,
+                    settings.DEFAULT_FROM_EMAIL,
+                    subject=subject,
+                    message=message,
+                    html_message=html_message,
+                    priority='now',
+                    attachments=send_files
+                )
             return Response({"success": True}, status=status.HTTP_200_OK)
         else:
 
