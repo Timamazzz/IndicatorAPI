@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'post_office',
     'corsheaders',
     'django_filters',
-    'adminsortable2',
     'adminsortable',
     'ckeditor',
     'users_app',
