@@ -21,7 +21,7 @@ class ProjectListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Project
-        fields = ('id', 'views', 'header_file', 'header_html', 'title', 'description', 'tags')
+        fields = ('id', 'column', 'views', 'header_file', 'header_html', 'title', 'description', 'tags')
 
 
 class ProjectRetrieveSerializer(WritableNestedModelSerializer):
