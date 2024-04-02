@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-26 00:55+0300\n"
+"POT-Creation-Date: 2024-04-02 12:14+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,152 +12,154 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: projects_app/models.py:7 projects_app/models.py:19
+#: .\models.py:7 .\models.py:19
 msgid "Название"
 msgstr "Title"
 
-#: projects_app/models.py:13
+#: .\models.py:13
 msgid "Метка"
 msgstr "Tag"
 
-#: projects_app/models.py:14 projects_app/models.py:28
+#: .\models.py:14 .\models.py:29
 msgid "Метки"
 msgstr "Tags"
 
-#: projects_app/models.py:21
+#: .\models.py:21
 msgid "Файл заголовка"
 msgstr "Header file"
 
-#: projects_app/models.py:22
+#: .\models.py:22
 msgid "HTML заголовка"
 msgstr "Header HTML"
 
-#: projects_app/models.py:23
+#: .\models.py:23
+msgid "Светлый фон"
+msgstr "Light background"
+
+#: .\models.py:24
 msgid "Описание"
 msgstr "Description"
 
-#: projects_app/models.py:24
+#: .\models.py:25
 msgid "Ссылка"
 msgstr "URL"
 
-#: projects_app/models.py:25
+#: .\models.py:26
 msgid "Дата"
 msgstr "Date"
 
-#: projects_app/models.py:27
+#: .\models.py:28
 msgid "Колонка отображения на главной"
 msgstr "Column on main page display"
 
-#: projects_app/models.py:38
+#: .\models.py:39
 msgid "Проект"
 msgstr "Project"
 
-#: projects_app/models.py:39
+#: .\models.py:40
 msgid "Проекты"
 msgstr "Projects"
 
-#: projects_app/models.py:59
+#: .\models.py:60
 msgid "Плитка"
 msgstr "Tile"
 
-#: projects_app/models.py:60
+#: .\models.py:61
 msgid "Слайдер"
 msgstr "Slider"
 
-#: projects_app/models.py:63
+#: .\models.py:64
 msgid "Тип галереи"
 msgstr "Gallery type"
 
-#: projects_app/models.py:67
+#: .\models.py:68
 #, python-brace-format
 msgid "Галерея для контента {id}"
 msgstr "Gallery for content {id}"
 
-#: projects_app/models.py:70 projects_app/models.py:77
-#: projects_app/models.py:103 projects_app/models.py:120
+#: .\models.py:71 .\models.py:78 .\models.py:104 .\models.py:121
 msgid "Галерея"
 msgstr "Gallery"
 
-#: projects_app/models.py:71
+#: .\models.py:72
 msgid "Галереи"
 msgstr "Galleries"
 
-#: projects_app/models.py:78 projects_app/models.py:102
-#: projects_app/models.py:118
+#: .\models.py:79 .\models.py:103 .\models.py:119
 msgid "Изображение"
 msgstr "Image"
 
-#: projects_app/models.py:82
+#: .\models.py:83
 #, python-brace-format
 msgid "Изображение {id} в галерее {gallery_id}"
 msgstr "Image {id} in gallery {gallery_id}"
 
-#: projects_app/models.py:85
+#: .\models.py:86
 msgid "Изображение галереи"
 msgstr "Gallery image"
 
-#: projects_app/models.py:86
+#: .\models.py:87
 msgid "Изображения галереи"
 msgstr "Gallery images"
 
-#: projects_app/models.py:99 projects_app/models.py:110
+#: .\models.py:100 .\models.py:111
 msgid "Текст"
 msgstr "Text"
 
-#: projects_app/models.py:100 projects_app/models.py:112
+#: .\models.py:101 .\models.py:113
 msgid "URL"
 msgstr "URL"
 
-#: projects_app/models.py:101 projects_app/models.py:115
+#: .\models.py:102 .\models.py:116
 msgid "Файл"
 msgstr "File"
 
-#: projects_app/models.py:108
+#: .\models.py:109
 msgid "Тип контента"
 msgstr "Content type"
 
-#: projects_app/models.py:113
+#: .\models.py:114
 msgid "Отображаемое имя ссылки"
 msgstr "Link display name"
 
-#: projects_app/models.py:116
+#: .\models.py:117
 msgid "Отображаемое имя файла"
 msgstr "File display name"
 
-#: projects_app/models.py:125
+#: .\models.py:126
 #, python-brace-format
 msgid "Контент {id} для {project_title}"
 msgstr "Content {id} for {project_title}"
 
-#: projects_app/models.py:128 projects_app/models.py:129
+#: .\models.py:129 .\models.py:130
 msgid "Контент"
 msgstr "Content"
 
-#: projects_app/serializers/project_serializers.py:36
+#: .\serializers\project_serializers.py:36
 msgid "Ваше имя"
 msgstr "Your name"
 
-#: projects_app/serializers/project_serializers.py:37
+#: .\serializers\project_serializers.py:37
 msgid "Телефон"
 msgstr "Phone"
 
-#: projects_app/serializers/project_serializers.py:38
+#: .\serializers\project_serializers.py:38
 msgid "Электронная почта"
 msgstr "Email"
 
-#: projects_app/serializers/project_serializers.py:39
+#: .\serializers\project_serializers.py:39
 msgid "Описание проекта"
 msgstr "Project Discussion"
 
-#: projects_app/serializers/project_serializers.py:40
+#: .\serializers\project_serializers.py:40
 msgid "Файлы"
 msgstr "Files"
 
-#: projects_app/views.py:62
+#: .\views.py:68
 msgid "Новое обсуждение проекта"
 msgstr "New Project Discussion"
 
-#: projects_app/views.py:63
+#: .\views.py:69
 #, python-brace-format
 msgid ""
 "Имя: {name}\n"
@@ -170,7 +172,7 @@ msgstr ""
 "Email: {email}\n"
 "Description: {description}"
 
-#: projects_app/views.py:67
+#: .\views.py:73
 #, python-brace-format
 msgid ""
 "<p><strong>Имя:</strong> {name}</p><p><strong>Телефон:</strong> {phone}</"

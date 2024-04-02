@@ -20,6 +20,7 @@ class Project(models.Model):
     header_file = models.FileField(upload_to='projects/headers/', blank=True, null=True,
                                    verbose_name=_('Файл заголовка'))
     header_html = models.TextField(blank=True, null=True, verbose_name=_('HTML заголовка'))
+    is_light_background_header = models.BooleanField(default=False, verbose_name=_('Светлый фон'))
     description = models.TextField(verbose_name=_('Описание'))
     url = models.URLField(blank=True, null=True, verbose_name=_('Ссылка'))
     date = models.DateField(verbose_name=_('Дата'))
