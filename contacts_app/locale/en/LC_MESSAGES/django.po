@@ -126,11 +126,11 @@ msgstr "Requisites"
 
 #: .\models.py:73
 msgid "Текст правил использования и политики конфиденциальности"
-msgstr ""
+msgstr "Text of Terms of Use and Privacy Policy"
 
 #: .\models.py:77 .\models.py:78
 msgid "Правила использования и политика конфиденциальности"
-msgstr ""
+msgstr "Terms of Use and Privacy Policy"
 
 #: .\signals.py:14
 msgid "Может быть только один активный объект!"
