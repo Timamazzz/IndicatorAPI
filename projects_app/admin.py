@@ -4,7 +4,7 @@ from modeltranslation.admin import TranslationAdmin, TranslationInlineModelAdmin
 from adminsortable.admin import SortableTabularInline, SortableStackedInline, SortableAdminMixin
 from .models import Project, Content, Gallery, GalleryImage, Tag
 from django.db import models
-from ckeditor.widgets import CKEditorWidget
+from django_ckeditor_5.widgets import CKEditor5Widget
 
 
 class GalleryImageInline(SortableTabularInline):
@@ -16,7 +16,7 @@ class GalleryImageInline(SortableTabularInline):
 class GalleryAdmin(SortableAdminMixin, admin.ModelAdmin):
     inlines = [GalleryImageInline]
     formfield_overrides = {
-        models.TextField: {'widget': CKEditorWidget(config_name='default')}
+        models.TextField: {'widget': CKEditor5Widget(config_name='default')}
     }
 
 
@@ -24,7 +24,7 @@ class ContentInline(SortableStackedInline, TranslationInlineModelAdmin):
     model = Content
     extra = 1
     formfield_overrides = {
-        models.TextField: {'widget': CKEditorWidget(config_name='default')}
+        models.TextField: {'widget': CKEditor5Widget(config_name='default')}
     }
 
 
@@ -33,7 +33,7 @@ class ProjectAdmin(SortableAdminMixin, TranslationAdmin):
     inlines = [ContentInline]
     list_display = ['title', 'description', 'order']
     formfield_overrides = {
-        models.TextField: {'widget': CKEditorWidget(config_name='default')}
+        models.TextField: {'widget': CKEditor5Widget(config_name='default')}
     }
 
 

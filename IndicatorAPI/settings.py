@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'django_filters',
     'adminsortable',
-    'ckeditor',
+    'django_ckeditor_5',
     'users_app',
     'projects_app',
     'contacts_app'
