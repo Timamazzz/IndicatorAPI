@@ -1,5 +1,5 @@
 from django.contrib import admin
-from modeltranslation.admin import TranslationAdmin, TranslationTabularInline, TranslationInlineModelAdmin
+from modeltranslation.admin import TranslationAdmin, TranslationInlineModelAdmin
 
 from adminsortable.admin import SortableTabularInline, SortableStackedInline, SortableAdminMixin
 from .models import Project, Content, Gallery, GalleryImage, Tag
