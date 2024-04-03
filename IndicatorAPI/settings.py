@@ -226,7 +226,6 @@ CKEDITOR_5_CONFIGS = {
             {'name': 'about', 'items': ['About']},
             {'name': 'pbckcode', 'items': ['pbckcode']},
         ],
-        'language': '{{ language }}',
         'toolbarLocation': 'bottom',
         'toolbarGroups': [
             {'name': 'document', 'groups': ['mode', 'document', 'doctools']},
