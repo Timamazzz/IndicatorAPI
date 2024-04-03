@@ -215,7 +215,7 @@ customColorPalette = [
 
 CKEDITOR_5_CONFIGS = {
     "default": {
-        "language": "{{language}}",
+        "language": "{{LANGUAGE_CODE}}",
         'toolbar': {
             'items': [
                 '|', 'heading',
