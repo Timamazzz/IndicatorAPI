@@ -203,47 +203,71 @@ EMAIL_PORT = int(os.environ.get("EMAIL_PORT", 465))
 EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 
+# CKEditor 5
+customColorPalette = [
+    {"color": "hsl(4, 90%, 58%)", "label": "Red"},
+    {"color": "hsl(340, 82%, 52%)", "label": "Pink"},
+    {"color": "hsl(291, 64%, 42%)", "label": "Purple"},
+    {"color": "hsl(262, 52%, 47%)", "label": "Deep Purple"},
+    {"color": "hsl(231, 48%, 48%)", "label": "Indigo"},
+    {"color": "hsl(207, 90%, 54%)", "label": "Blue"},
+]
+
 CKEDITOR_5_CONFIGS = {
-    'default': {
-        'toolbar': [
-            {'name': 'document', 'items': ['Source', '-', 'NewPage', 'Preview', '-', 'Templates']},
-            {'name': 'clipboard', 'items': ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']},
-            {'name': 'editing', 'items': ['Find', 'Replace', '-', 'SelectAll', 'RemoveFormat']},
-            {'name': 'forms',
-             'items': ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton',
-                       'HiddenField']},
-            '/',
-            {'name': 'basicstyles', 'items': ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript']},
-            {'name': 'paragraph',
-             'items': ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'JustifyLeft',
-                       'JustifyCenter', 'JustifyRight', 'JustifyBlock']},
-            {'name': 'links', 'items': ['Link', 'Unlink', 'Anchor']},
-            {'name': 'insert', 'items': ['Image', 'Table', 'HorizontalRule', 'SpecialChar']},
-            {'name': 'styles', 'items': ['Styles', 'Format', 'Font', 'FontSize']},
-            {'name': 'colors', 'items': ['TextColor', 'BGColor']},
-            {'name': 'tools', 'items': ['Maximize', 'ShowBlocks']},
-            {'name': 'others', 'items': ['-']},
-            {'name': 'about', 'items': ['About']},
-            {'name': 'pbckcode', 'items': ['pbckcode']},
-        ],
-        'toolbarLocation': 'bottom',
-        'toolbarGroups': [
-            {'name': 'document', 'groups': ['mode', 'document', 'doctools']},
-            {'name': 'clipboard', 'groups': ['clipboard', 'undo']},
-            {'name': 'editing', 'groups': ['find', 'selection', 'spellchecker']},
-            {'name': 'forms'},
-            {'name': 'basicstyles', 'groups': ['basicstyles', 'cleanup']},
-            {'name': 'paragraph', 'groups': ['list', 'indent', 'blocks', 'align', 'bidi']},
-            {'name': 'links'},
-            {'name': 'insert'},
-            {'name': 'styles'},
-            {'name': 'colors'},
-            {'name': 'tools'},
-            {'name': 'others'},
-            {'name': 'about'},
-        ],
-        'removeButtons': 'Underline,Subscript,Superscript,Anchor,Image,Flash,Smiley,SpecialChar,PageBreak,Iframe',
-        'removePlugins': 'magicline,showborders',
-        'extraPlugins': 'pbckcode',
+    "default": {
+        "language": "{{language}}",
+        'toolbar': {
+            'items': [
+                '|', 'heading',
+                '|', 'outdent', 'indent',
+                '|', 'bold', 'italic', 'link', 'underline', 'strikethrough', 'code', 'subscript', 'superscript',
+                'highlight',
+                '|', 'codeBlock', 'insertImage', 'bulletedList', 'numberedList', 'todoList',
+                '|', 'blockQuote',
+                '|', 'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'mediaEmbed', 'removeFormat',
+                'insertTable',
+                '|',
+            ],
+            'shouldNotGroupWhenFull': True
+        },
+        "image": {
+            "toolbar": [
+                '|', "imageTextAlternative",
+                "|", "imageStyle:alignLeft", "imageStyle:alignRight", "imageStyle:alignCenter", "imageStyle:side",
+                "|", "toggleImageCaption",
+                "|"
+            ],
+            "styles": [
+                "full",
+                "side",
+                "alignLeft",
+                "alignRight",
+                "alignCenter",
+            ],
+        },
+        "table": {
+            "contentToolbar": [
+                "tableColumn",
+                "tableRow",
+                "mergeTableCells",
+                "tableProperties",
+                "tableCellProperties",
+            ],
+            "tableProperties": {
+                "borderColors": customColorPalette,
+                "backgroundColors": customColorPalette,
+            },
+            "tableCellProperties": {
+                "borderColors": customColorPalette,
+                "backgroundColors": customColorPalette,
+            },
+        },
+        "list": {
+            "properties": {
+                "styles": True,
+                "startIndex": True,
+                "reversed": True,
+            }
+        },
     },
 }
