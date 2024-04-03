@@ -1,7 +1,9 @@
 from django.contrib import admin
 
 from .models import RunningLine, RunningText, Contact, ContactsLink, CustomerLink, Requisite, PrivacyPolicy
-from modeltranslation.admin import TranslationAdmin, TranslationInlineModelAdmin, TranslationTabularInline
+from modeltranslation.admin import TranslationAdmin, TranslationTabularInline
+from django.db import models
+from ckeditor.widgets import CKEditorWidget
 
 
 class RunningTextInline(TranslationTabularInline):
@@ -42,3 +44,6 @@ class CustomerLinkAdmin(TranslationAdmin):
 @admin.register(PrivacyPolicy)
 class PrivacyPolicyAdmin(TranslationAdmin):
     list_display = ('text',)
+    formfield_overrides = {
+        models.TextField: {'widget': CKEditorWidget(config_name='default')}
+    }
