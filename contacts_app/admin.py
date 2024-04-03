@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import RunningLine, RunningText, Contact, ContactsLink, CustomerLink, Requisite
+from .models import RunningLine, RunningText, Contact, ContactsLink, CustomerLink, Requisite, PrivacyPolicy
 from modeltranslation.admin import TranslationAdmin, TranslationInlineModelAdmin, TranslationTabularInline
 
 
@@ -37,3 +37,8 @@ class RequisiteAdmin(TranslationAdmin):
 @admin.register(CustomerLink)
 class CustomerLinkAdmin(TranslationAdmin):
     list_display = ('name', 'url')
+
+
+@admin.register(PrivacyPolicy)
+class PrivacyPolicyAdmin(TranslationAdmin):
+    list_display = ('text',)

@@ -67,3 +67,12 @@ class Requisite(models.Model):
     class Meta:
         verbose_name = _('Реквизит')
         verbose_name_plural = _('Реквизиты')
+
+
+class PrivacyPolicy(models.Model):
+    text = models.TextField(verbose_name=_('Текст правил использования и политики конфиденциальности'))
+    is_active = models.BooleanField(default=False, verbose_name=_('Активно'))
+
+    class Meta:
+        verbose_name = _('Правила использования и политика конфиденциальности')
+        verbose_name_plural = _('Правила использования и политика конфиденциальности')

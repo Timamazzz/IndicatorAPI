@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-25 21:04+0300\n"
+"POT-Creation-Date: 2024-04-03 12:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -11,126 +11,127 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: contacts_app/models.py:6
+
+#: .\models.py:6
 msgid "Название бегущей строки"
 msgstr "Running line name"
 
-#: contacts_app/models.py:7 contacts_app/models.py:30 contacts_app/models.py:65
+#: .\models.py:7 .\models.py:30 .\models.py:65 .\models.py:74
 msgid "Активно"
 msgstr "Active"
 
-#: contacts_app/models.py:10 contacts_app/models.py:19
+#: .\models.py:10 .\models.py:19
 msgid "Бегущая строка"
 msgstr "Running line"
 
-#: contacts_app/models.py:11
+#: .\models.py:11
 msgid "Бегущие строки"
 msgstr "Running lines"
 
-#: contacts_app/models.py:20 contacts_app/models.py:23
+#: .\models.py:20 .\models.py:23
 msgid "Текст бегущей строки"
 msgstr "Running line text"
 
-#: contacts_app/models.py:24
+#: .\models.py:24
 msgid "Тексты бегущих строк"
 msgstr "Running line texts"
 
-#: contacts_app/models.py:28
+#: .\models.py:28
 msgid "Телефон"
 msgstr "Phone"
 
-#: contacts_app/models.py:29
+#: .\models.py:29
 msgid "Email"
 msgstr "Email"
 
-#: contacts_app/models.py:33 contacts_app/models.py:40
+#: .\models.py:33 .\models.py:40
 msgid "Контакт"
 msgstr "Contact"
 
-#: contacts_app/models.py:34
+#: .\models.py:34
 msgid "Контакты"
 msgstr "Contacts"
 
-#: contacts_app/models.py:38
+#: .\models.py:38
 msgid "Название"
 msgstr "Name"
 
-#: contacts_app/models.py:39
+#: .\models.py:39
 msgid "URL"
 msgstr "URL"
 
-#: contacts_app/models.py:43
+#: .\models.py:43
 msgid "Ссылка контакта"
 msgstr "Contact link"
 
-#: contacts_app/models.py:44
+#: .\models.py:44
 msgid "Ссылки контакта"
 msgstr "Contact links"
 
-#: contacts_app/models.py:48
+#: .\models.py:48
 msgid "Название ссылки"
 msgstr "Link name"
 
-#: contacts_app/models.py:49
+#: .\models.py:49
 msgid "URL ссылки"
 msgstr "Link URL"
 
-#: contacts_app/models.py:52
+#: .\models.py:52
 msgid "Ссылка заказчика"
 msgstr "Customer link"
 
-#: contacts_app/models.py:53
+#: .\models.py:53
 msgid "Ссылки заказчиков"
 msgstr "Customer links"
 
-#: contacts_app/models.py:57
+#: .\models.py:57
 msgid "Наименование"
 msgstr "Name"
 
-#: contacts_app/models.py:58
+#: .\models.py:58
 msgid "Свидетельство"
 msgstr "Certificate"
 
-#: contacts_app/models.py:59
+#: .\models.py:59
 msgid "ИНН"
 msgstr "Tax ID"
 
-#: contacts_app/models.py:60
+#: .\models.py:60
 msgid "ОГРНИП"
 msgstr "Primary State Registration Number"
 
-#: contacts_app/models.py:61
+#: .\models.py:61
 msgid "Расчетный счет"
 msgstr "Checking account"
 
-#: contacts_app/models.py:62
+#: .\models.py:62
 msgid "БИК"
 msgstr "Bank Identification Code"
 
-#: contacts_app/models.py:63
+#: .\models.py:63
 msgid "Банк"
 msgstr "Bank"
 
-#: contacts_app/models.py:64
+#: .\models.py:64
 msgid "Корреспондентский счет"
 msgstr "Correspondent account"
 
-#: contacts_app/models.py:68
+#: .\models.py:68
 msgid "Реквизит"
 msgstr "Requisite"
 
-#: contacts_app/models.py:69
+#: .\models.py:69
 msgid "Реквизиты"
 msgstr "Requisites"
 
-#: contacts_app/signals.py:13
-msgid "Может быть только одна активная строка!"
-msgstr "There can be only one active running line!"
+#: .\models.py:73
+msgid "Текст правил использования и политики конфиденциальности"
+msgstr ""
 
-#: contacts_app/signals.py:21
-msgid "Может быть только один активный реквизит!"
-msgstr "There can be only one active requisite!"
+#: .\models.py:77 .\models.py:78
+msgid "Правила использования и политика конфиденциальности"
+msgstr ""
 
-#: contacts_app/signals.py:29
-msgid "Может быть только один активный контакт!"
-msgstr "There can be only one active contact!"
+#: .\signals.py:14
+msgid "Может быть только один активный объект!"
+msgstr "There can be only one active object!"
