@@ -23,6 +23,7 @@ from IndicatorAPI import settings
 
 urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
+    path("ckeditor5/", include('django_ckeditor_5.urls'), name="ck_editor_5_upload_file"),
     path('api/users/', include('users_app.urls')),
     path('api/projects/', include('projects_app.urls')),
     path('api/about-us/', include('contacts_app.urls')),
