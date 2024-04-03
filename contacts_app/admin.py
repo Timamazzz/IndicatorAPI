@@ -3,7 +3,7 @@ from django.contrib import admin
 from .models import RunningLine, RunningText, Contact, ContactsLink, CustomerLink, Requisite, PrivacyPolicy
 from modeltranslation.admin import TranslationAdmin, TranslationTabularInline
 from django.db import models
-from django_ckeditor_5.widgets import CKEditor5Widget
+from ckeditor.widgets import CKEditorWidget
 
 
 class RunningTextInline(TranslationTabularInline):
@@ -45,5 +45,5 @@ class CustomerLinkAdmin(TranslationAdmin):
 class PrivacyPolicyAdmin(TranslationAdmin):
     list_display = ('text',)
     formfield_overrides = {
-        models.TextField: {'widget': CKEditor5Widget(config_name='default')}
+        models.TextField: {'widget': CKEditorWidget(config_name='default')}
     }
