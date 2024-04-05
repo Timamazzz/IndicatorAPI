@@ -37,10 +37,12 @@ class ProjectAdmin(SortableAdminMixin, TranslationAdmin):
     }
     exclude_ckeditor_fields = ['header_html', 'description']
 
-    def formfield_for_dbfield(self, db_field, **kwargs):
+    def formfield_for_dbfield(self, db_field, request, **kwargs):
         if db_field.name in ['header_html', 'description']:
             kwargs['widget'] = admin.widgets.AdminTextInputWidget()
-        return super(ProjectAdmin, self).formfield_for_dbfield(db_field, **kwargs)
+        field = super().formfield_for_dbfield(db_field, request, **kwargs)
+        self.patch_translation_field(db_field, field, request, **kwargs)
+        return field
 
 
 @admin.register(Tag)
