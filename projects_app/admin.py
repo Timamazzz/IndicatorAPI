@@ -35,6 +35,14 @@ class ProjectAdmin(SortableAdminMixin, TranslationAdmin):
     formfield_overrides = {
         models.TextField: {'widget': CKEditorWidget(config_name='default')}
     }
+    exclude_ckeditor_fields = ['header_html', 'description']
+
+    def formfield_for_dbfield(self, db_field, request, **kwargs):
+        if db_field.name in ['header_html', 'description']:
+            kwargs['widget'] = admin.widgets.AdminTextInputWidget()
+        field = super().formfield_for_dbfield(db_field, request, **kwargs)
+        self.patch_translation_field(db_field, field, request, **kwargs)
+        return field
 
 
 @admin.register(Tag)
