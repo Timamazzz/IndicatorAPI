@@ -7,6 +7,7 @@ from wagtail.blocks import ListBlock, BlockQuoteBlock
 from wagtail.fields import StreamField
 from wagtail.models import Page
 
+from project_app_v2.block import LinkBlock
 from project_app_v2.fields import ImageChooserBlockField, RichTextFieldBlock, DocumentChooserBlockField
 from projects_app.models import Tag
 from django.utils.translation import gettext_lazy as _
@@ -39,7 +40,8 @@ class ProjectPage(Page):
             ('gallery', ListBlock(ImageChooserBlockField())),
             ('paragraph', RichTextFieldBlock()),
             ('documents', ListBlock(DocumentChooserBlockField())),
-            ('quote', BlockQuoteBlock())
+            ('quote', BlockQuoteBlock()),
+            ('link', LinkBlock())
         ), verbose_name=_("Контент сайта")
     )
 
