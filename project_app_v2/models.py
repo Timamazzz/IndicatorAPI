@@ -14,6 +14,7 @@ from django.utils.translation import gettext_lazy as _
 
 from wagtail.api.v2.serializers import StreamField as StreamFieldSerializer, BaseSerializer
 
+from django import forms
 
 # Create your models here.
 
@@ -55,7 +56,7 @@ class ProjectPage(Page):
     content_panels = Page.content_panels + [
         MultiFieldPanel([
             FieldPanel("header_html"), FieldPanel('is_light_background_header'),
-            FieldPanel('column'), FieldPanel('tags'), FieldPanel('order'), FieldPanel('description'),
+            FieldPanel('column'), FieldPanel('tags', widget=forms.CheckboxSelectMultiple), FieldPanel('order'), FieldPanel('description'),
             FieldPanel('header_file')
         ], heading="Базовые настройки страницы"),
         FieldPanel('content')
