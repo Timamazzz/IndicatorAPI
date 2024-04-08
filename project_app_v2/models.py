@@ -12,10 +12,16 @@ from project_app_v2.fields import ImageChooserBlockField, RichTextFieldBlock, Do
 from projects_app.models import Tag
 from django.utils.translation import gettext_lazy as _
 
-from wagtail.api.v2.serializers import StreamField as StreamFieldSerializer
+from wagtail.api.v2.serializers import StreamField as StreamFieldSerializer, BaseSerializer
 
 
 # Create your models here.
+
+class TagSerializer(BaseSerializer):
+    meta_fields=[]
+    class Meta:
+        fields = '__all__'
+        model = Tag
 
 class ProjectPage(Page):
     header_html = models.TextField(blank=True, null=True, verbose_name=_('Название компонента'))
@@ -56,7 +62,7 @@ class ProjectPage(Page):
     api_fields = [
         APIField('slug'),
         APIField('header_html'), APIField('is_light_background_header'),
-        APIField('column'), APIField('tags'), APIField('order'), APIField('content', serializer=StreamFieldSerializer()),
+        APIField('column'), APIField('tags', serializer=TagSerializer(many=True)), APIField('order'), APIField('content', serializer=StreamFieldSerializer()),
 
     ]
 
