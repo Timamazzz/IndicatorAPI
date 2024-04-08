@@ -1,5 +1,6 @@
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
+from modelcluster.fields import ParentalManyToManyField
 from wagtail import blocks
 from wagtail.admin.panels import MultiFieldPanel, FieldPanel
 from wagtail.api import APIField
@@ -37,7 +38,7 @@ class ProjectPage(Page):
     is_light_background_header = models.BooleanField(default=False, verbose_name=_('Светлый фон'))
     column = models.PositiveIntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(3)],
                                          verbose_name=_("Ширина в колонках"))
-    tags = models.ManyToManyField(Tag, blank=True, related_name='projects_v2', verbose_name=_('Метки'))
+    tags = ParentalManyToManyField(Tag, blank=True, related_name='projects_v2', verbose_name=_('Метки'))
     order = models.PositiveIntegerField(default=0, blank=False, null=False)
 
     content = StreamField(
@@ -56,7 +57,7 @@ class ProjectPage(Page):
     content_panels = Page.content_panels + [
         MultiFieldPanel([
             FieldPanel("header_html"), FieldPanel('is_light_background_header'),
-            FieldPanel('column'), FieldPanel('tags', widget=forms.CheckboxSelectMultiple), FieldPanel('order'), FieldPanel('description'),
+            FieldPanel('column'), FieldPanel('tags'), FieldPanel('order'), FieldPanel('description'),
             FieldPanel('header_file')
         ], heading="Базовые настройки страницы"),
         FieldPanel('content')
