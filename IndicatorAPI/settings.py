@@ -153,6 +153,8 @@ LANGUAGE_CODE = 'ru'
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
 
+WAGTAIL_I18N_ENABLED=True
+
 LANGUAGES = [
     ('ru', 'Russian'),
     ('en', 'English'),
