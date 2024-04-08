@@ -35,7 +35,7 @@ urlpatterns = i18n_patterns(
     path('api/about-us/', include('contacts_app.urls')),
     path('api/v2/', api_router.urls),
     #wagtail stuff
-    path('cms/', include(wagtailadmin_urls)),
+    path('api/cms/', include(wagtailadmin_urls)),
     path('documents/', include(wagtaildocs_urls)),
     path('pages/', include(wagtail_urls)),
 
