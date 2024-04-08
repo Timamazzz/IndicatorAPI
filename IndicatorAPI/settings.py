@@ -157,6 +157,7 @@ LANGUAGES = [
     ('ru', 'Russian'),
     ('en', 'English'),
 ]
+WAGTAIL_CONTENT_LANGUAGES = LANGUAGES
 
 TIME_ZONE = 'Europe/Moscow'
 
