@@ -202,7 +202,8 @@ SIMPLE_JWT = {
 
 # Cors
 CORS_ALLOW_ALL_ORIGINS = True
-CSRF_TRUSTED_ORIGINS = ['http://localhost', 'http://localhost:8000', 'http://localhost:8091', 'http://localhost:8092']
+CSRF_TRUSTED_ORIGINS = ['http://localhost', 'http://localhost:8000', 'http://localhost:8091', 'http://localhost:8092',
+                        'http://51.250.126.124:8090']
 CORS_ALLOW_METHODS = [
     'DELETE',
     'GET',
