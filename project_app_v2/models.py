@@ -1,6 +1,6 @@
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
-from modelcluster.fields import ParentalManyToManyField
+from modelcluster.fields import ParentalManyToManyField, ParentalKey
 from wagtail import blocks
 from wagtail.admin.panels import MultiFieldPanel, FieldPanel
 from wagtail.api import APIField
@@ -41,6 +41,8 @@ class ProjectPage(Page):
     tags = ParentalManyToManyField(Tag, blank=True, related_name='projects_v2', verbose_name=_('Метки'))
     order = models.PositiveIntegerField(default=0, blank=False, null=False)
 
+    date = models.DateField(verbose_name=_('Дата'), null=True, blank=True)
+
     content = StreamField(
         block_types=(
             ('heading', blocks.CharBlock(form_classname="title")),
@@ -50,7 +52,7 @@ class ProjectPage(Page):
             ('paragraph', RichTextFieldBlock()),
             ('documents', ListBlock(DocumentChooserBlockField())),
             ('quote', BlockQuoteBlock()),
-            ('link', LinkBlock())
+            ('link', LinkBlock()),
         ), verbose_name=_("Контент сайта")
     )
 
@@ -58,7 +60,7 @@ class ProjectPage(Page):
         MultiFieldPanel([
             FieldPanel("header_html"), FieldPanel('is_light_background_header'),
             FieldPanel('column'), FieldPanel('tags'), FieldPanel('order'), FieldPanel('description'),
-            FieldPanel('header_file')
+            FieldPanel('header_file'), FieldPanel('date')
         ], heading="Базовые настройки страницы"),
         FieldPanel('content')
     ]
@@ -72,5 +74,18 @@ class ProjectPage(Page):
 
     ]
 
+    def get_views(self):
+        return UniqueProjectViewPage.objects.filter(project=self).count()
+
     class Meta:
         ordering = ('order',)
+
+
+class UniqueProjectViewPage(models.Model):
+    project = ParentalKey(ProjectPage, on_delete=models.CASCADE)
+    ip_address = models.CharField(max_length=45)
+    user_agent = models.CharField(max_length=255)
+    viewed_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('project', 'ip_address', 'user_agent')
