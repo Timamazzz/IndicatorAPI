@@ -1,5 +1,7 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin, TranslationInlineModelAdmin
+from wagtail.snippets.models import register_snippet
+from wagtail.snippets.views.snippets import SnippetViewSet
 
 from adminsortable.admin import SortableTabularInline, SortableStackedInline, SortableAdminMixin
 from .models import Project, Content, Gallery, GalleryImage, Tag
@@ -48,3 +50,12 @@ class ProjectAdmin(SortableAdminMixin, TranslationAdmin):
 @admin.register(Tag)
 class TagAdmin(TranslationAdmin):
     list_display = ['name', ]
+
+class TagAdminWagtail(SnippetViewSet):
+    list_display = ['name', ]
+    model = Tag
+
+register_snippet(TagAdminWagtail)
+
+
+

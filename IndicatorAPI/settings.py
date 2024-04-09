@@ -30,7 +30,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, r'media')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG")
+DEBUG = os.environ.get("DEBUG", True)
 
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
@@ -52,7 +52,29 @@ INSTALLED_APPS = [
     'ckeditor',
     'users_app',
     'projects_app',
-    'contacts_app'
+    'contacts_app',
+    'project_app_v2',
+
+
+
+    #wagtail stuff
+    'wagtail.contrib.forms',
+    'wagtail.contrib.redirects',
+    'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.admin',
+    'wagtail',
+    "wagtail_localize",
+    "wagtail_localize.locales",
+    
+    
+    'modelcluster',
+    'taggit',
 ]
 
 MIDDLEWARE = [
@@ -85,7 +107,7 @@ TEMPLATES = [
         },
     },
 ]
-
+WAGTAIL_SITE_NAME = 'Indicator'
 WSGI_APPLICATION = 'IndicatorAPI.wsgi.application'
 
 # Database
@@ -131,10 +153,13 @@ LANGUAGE_CODE = 'ru'
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
 
+WAGTAIL_I18N_ENABLED=True
+
 LANGUAGES = [
     ('ru', 'Russian'),
     ('en', 'English'),
 ]
+WAGTAIL_CONTENT_LANGUAGES = LANGUAGES
 
 TIME_ZONE = 'Europe/Moscow'
 
@@ -149,7 +174,7 @@ USE_TZ = True
 
 MEDIA_URL = 'media/'
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
