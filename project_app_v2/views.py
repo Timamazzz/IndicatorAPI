@@ -6,9 +6,9 @@ from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
 from wagtail.api.v2.views import PagesAPIViewSet
 
-from project_app_v2.models import ProjectPage
+from project_app_v2.models import ProjectPage, UniqueProjectViewPage
 from project_app_v2.serializers import ProjectViewPageSerializer
-from projects_app.models import UniqueProjectView
+
 
 
 # Create your views here.
@@ -31,7 +31,7 @@ class ProjectPageViewSet(PagesAPIViewSet):
             ip_address = self.request.META.get('REMOTE_ADDR')
             user_agent = self.request.META.get('HTTP_USER_AGENT')
 
-            UniqueProjectView.objects.get_or_create(
+            UniqueProjectViewPage.objects.get_or_create(
                 project=self.get_object(),
                 ip_address=ip_address,
                 user_agent=user_agent
