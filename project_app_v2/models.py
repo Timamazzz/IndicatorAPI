@@ -68,7 +68,7 @@ class ProjectPage(Page):
     api_fields = [
         APIField('title'), APIField('slug'),
         APIField('header_html'), APIField('is_light_background_header'), APIField('description'),
-        APIField('header_file'),
+        APIField('header_file'), APIField('date'),
         APIField('column'), APIField('tags', serializer=TagSerializer(many=True)), APIField('order'),
         APIField('content', serializer=StreamFieldSerializer()),
 
